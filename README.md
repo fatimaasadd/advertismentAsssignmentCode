@@ -8,7 +8,7 @@
 
 ## Steps to run the test:
 
-1. Clone the Repository from URL () Clone --> Open in your IDE Visual Studio Code
+1. Clone the Repository from URL (https://github.com/fatimaasadd/advertismentAsssignmentCode.git) Clone --> Open in your IDE Visual Studio Code
 
 2. To install Dependencies, Run the following Command in Terminal:
 
