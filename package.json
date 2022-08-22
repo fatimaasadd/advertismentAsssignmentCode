@@ -1,0 +1,45 @@
+{
+  "name": "aklamio.test",
+  "version": "1.0.0",
+  "description": "Automation Test Suite for Aklamio",
+  "main": "index.js",
+  "scripts": {
+    "clean:artifacts": "rm -rf mochawesome-report/**",
+    "test": "npx cypress run --env runningEnvironment=ENV_STAGE",
+    "headTest": "npm run test -- --headed --spec \"cypress/integration/modules/End-To-End-Tests.spec.js\" ",
+    "chromeTest": "npm run clean:artifacts && npm run test -- --browser chrome --spec \"cypress/integration/modules/End-To-End-Tests.spec.js\" ",
+    "electronTest": "npm run clean:artifacts && npm run test -- --browser electron --spec \"cypress/integration/modules/End-To-End-Tests.spec.js\" ",
+    "firefoxTest": "npm run clean:artifacts && npm run test -- --browser firefox --spec \"cypress/integration/modules/End-To-End-Tests.spec.js\" ",
+    "edgeTest": "npm run clean:artifacts && npm run test -- --browser edge --spec \"cypress/integration/modules/End-To-End-Tests.spec.js\" ",
+    "mochaReportHeadlessTest": "npm run clean:artifacts && npx cypress run --reporter mochawesome --spec \"cypress/integration/modules/End-To-End-Tests.spec.js\" ",
+    "mochaReportHeadedTest": "npm run clean:artifacts && npx cypress run --headed --reporter mochawesome --spec \"cypress/integration/modules/End-To-End-Tests.spec.js\" ",
+    "e2e:Mochawesome": "npm run clean:artifacts && npm run mochaReportHeadlessTest --spec \"cypress/integration/modules/End-To-End-Tests.spec.js\" ",
+    "e2e:Cypress Dashboard": "npm run clean:artifacts && npx cypress run --record --key 820ce967-0288-4fd4-8444-a9acc863d5ac --spec \"cypress/integration/modules/End-To-End-Tests.spec.js\" "
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 50
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.aklamio.com/qa/aklamio.test.git"
+  },
+  "keywords": [],
+  "author": "Aklamio Test Engineers",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "dotenv-extended": "^2.9.0",
+    "mocha": "^9.2.0",
+    "mochawesome": "^7.0.1",
+    "xlsx": "^0.17.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "cypress": "^10.6.0",
+    "cypress-dotenv": "^2.0.0",
+    "cypress-xpath": "^2.0.1",
+    "faker": "^6.6.6",
+    "mysql-ssh": "^1.0.6"
+  }
+}

@@ -1,0 +1,45 @@
+[
+    {
+        "name": "",
+        "street": "",
+        "room": "",
+        "price": "",
+        "expectedError": "This is required"
+
+    },
+    {
+        "name": "Test Advertisment",
+        "street": "",
+        "room": "",
+        "price": "",
+        "expectedError": "This is required"
+    },
+    {
+        "name": "Test Advertisment",
+        "street": "",
+        "room": "",
+        "price": ".....ff",
+        "expectedError": "Invalid price(Valid currency in euros: 12,12)"
+    },
+    {
+        "name": "Test Advertisment",
+        "street": "",
+        "room": "",
+        "price": "45",
+        "expectedError": ""
+    },
+    {
+        "name": "Checking Test Advertisment Max limit by passing more then 50 charaters",
+        "street": "",
+        "room": "",
+        "price": "45",
+        "expectedError": "Max length reached"
+    },
+    {
+        "name": "..,",
+        "street": "",
+        "room": "",
+        "price": "45",
+        "expectedError": "Alphabets and numerals only"
+    }
+]
